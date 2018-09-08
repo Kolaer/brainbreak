@@ -12,7 +12,9 @@ main = do
   bbCode <- return $ parseBB text
   case bbCode of
     Left err -> putStrLn $ "Error: " ++ (show err)
-    Right code -> T.putStrLn $ ppllvm $ generateModule code
+    Right code -> do
+      modul <- return $ generateModule code
+      runJIT modul
 
 
 -- main = T.putStrLn $ ppllvm $ generateModule

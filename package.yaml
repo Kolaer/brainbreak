@@ -28,6 +28,7 @@ library:
     - megaparsec == 6.5.0
     - llvm-hs-pure == 6.2.1
     - llvm-hs == 6.3.0
+    - mtl
 
 executables:
   brainbreak-exe:
