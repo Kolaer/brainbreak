@@ -80,7 +80,7 @@ bbCodeIR ((BBLoop code), buffer, index, getchar, putchar) = mdo
 
   br loop
 
-  loop <- block `named` "loop"
+  loop <- block
 
   forM_ env bbCodeIR
 
@@ -93,7 +93,7 @@ bbCodeIR ((BBLoop code), buffer, index, getchar, putchar) = mdo
 
   condBr cmp loop after
 
-  after <- block `named` "after.loop"
+  after <- block
 
   return ()
 
